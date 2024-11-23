@@ -1,0 +1,138 @@
+ .page__sidebar-navigation-col {
+    overflow: hidden;
+    display: block; 
+    padding: 3px 20px;
+    border-radius: 10px;
+}
+
+.page__sidebar-navigation-col:hover { 
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+}
+
+.page__sidebar-navigation-body {
+    height: 0;
+    opacity: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+
+.page__sidebar-navigation-col-price {
+    padding: 14px;
+    border: 0.4px solid #d2d1d1;
+    border-radius: 10px;
+}
+
+.page__sidebar-navigation-col-price:hover { 
+    border: 0.4px solid white;
+}
+
+.page__sidebar-navigation-menu {
+    padding: 13px 0;
+    max-height: 200px;
+    overflow: auto;
+}
+  
+.options__input:disabled+.page__sidebar-navigation-body-menu-options-item-input-text {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* .page__sidebar-navigation-body:not(._showed) {
+    animation-duration: 0.5s;
+    animation-name: animation_to;
+    animation-fill-mode: backwards, forwards;
+    animation-direction:reverse;
+} */
+
+.page__sidebar-navigation-body._showed {
+    animation-duration: 0.5s;
+    animation-name: animation_to;
+    animation-fill-mode: forwards, backwards;
+}
+
+@keyframes animation_to {
+    0% {
+        height: 0;
+        opacity: 0;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    100% {
+        height: 100%;
+        opacity: 1; 
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }  
+}
+
+.filter_controll {
+    width:100%
+}
+
+.filter_controll .btn{
+    margin-bottom: 20px;
+}
+
+/* Подсказка */
+
+.page__sidebar_form {
+    position: relative;
+}
+
+.triangle {
+    background-color: #FFB400;
+    position: absolute;
+    left: -30px;
+    top:calc(50% - 10px)
+}
+
+.triangle:after {
+    content: "";
+    position: absolute; 
+    left: 10px; 
+    border: 10px solid transparent; 
+    border-right: 10px solid #FFB400;
+}
+
+.flter_pods {
+    position: absolute;
+    width: 100px;
+    height: 65px;
+    background-color: #FFB400;
+    color:white;
+    text-align: center;
+    right:calc(0px - 110px);
+    z-index: 10000000;
+    padding: 5px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+  }
+
+  
+  .loader_white {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    background-position: center;
+    background-size: 130%;
+    background-repeat: no-repeat;
+    background-image: url(img/icons/white-loader.svg); 
+  }
+  
+  .pds_naideno {
+    font-size: 12px!important;
+    line-height: 1.3;
+    margin: 0 0 3px 0!important;
+  }
+  
+  .pds_submit {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: no-repeat;
+    color: white;
+  }
+  
+  .pds_submit:hover{ 
+    text-decoration: underline;
+  }

@@ -1,0 +1,40 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+
+        "clone_rep": "ssh u0743099@ftp.light-snab.ru \"git clone https://github.com/asmi046/market_sveta_laravel www/lr.marketsveta.su\"",
+        "composer_remove": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && /opt/php/8.1/bin/php composer.phar dumpauto\"",
+        "composer_install": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && /opt/php/8.1/bin/php composer.phar install\"",
+        "pull_rep": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && git pull\"",
+        "send_vite_build": "scp -C -r public/build u0743099@ftp.light-snab.ru:www/lr.marketsveta.su/public",
+
+        "migrate_rep": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && /opt/php/8.1/bin/php artisan migrate\"",
+        "rollback_rep": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && /opt/php/8.1/bin/php artisan migrate:rollback\"",
+        "seed_rep": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && /opt/php/8.1/bin/php artisan DB:seed\"",
+        "db_update": "npm run rollback_rep && npm run migrate_rep && npm run seed_rep",
+
+        "optimized_rep": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && /opt/php/8.1/bin/php composer.phar update --optimize-autoloader --no-dev\"",
+        "storage_link": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && /opt/php/8.1/bin/php artisan storage:link\"",
+        "key_gen": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && /opt/php/8.1/bin/php artisan key:generate\"",
+        "cache_config": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && /opt/php/8.1/bin/php artisan config:cache\"",
+        "cache_route": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && /opt/php/8.1/bin/php artisan route:cache\"",
+        "cache_view": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && /opt/php/8.1/bin/php artisan view:cache\"",
+        "cache_clear": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && /opt/php/8.1/bin/php artisan cache:clear\"",
+        "optimize": "ssh u0743099@ftp.light-snab.ru \"cd www/lr.marketsveta.su && /opt/php/8.1/bin/php artisan optimize\"",
+        "optimize_all": "npm run optimize && npm run cache_clear && npm run cache_view && npm run cache_route && npm run cache_config"
+    },
+    "devDependencies": {
+        "axios": "^0.27",
+        "laravel-vite-plugin": "^0.5.0",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "vite": "^3.0.0"
+    },
+    "dependencies": {
+        "@vitejs/plugin-vue": "^3.0.3",
+        "vue": "^3.2.37",
+        "vue-axios": "^3.4.1"
+    }
+}

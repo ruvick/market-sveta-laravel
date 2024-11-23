@@ -1,0 +1,15 @@
+.full_width {
+    width: 100%;
+}
+
+.empty_btn {
+   border:1px solid #FFB400;
+   background-color: white;
+   color: #FFB400; 
+}
+
+.empty_btn:hover {
+    border:1px solid #e1a923;
+    background-color: #e1a923;
+    color: white;
+}
